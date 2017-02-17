@@ -10,7 +10,7 @@ namespace Algorithms_CSharp.Sort
     /// Class including code to perform an Insertion Sort.
     /// Efficiency: O(n^2)
     /// </summary>
-    class InsertionSort
+    public class InsertionSort
     {
         /// <summary>
         /// Takes an unsorted array and performs an Insertion Sort on it.
