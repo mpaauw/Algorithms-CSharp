@@ -10,7 +10,7 @@ namespace Algorithms_CSharp.Sort
     /// Class including code to perform a Selection Sort.
     /// Efficiency: O(n^2)
     /// </summary>
-    class SelectionSort<T>
+    public class SelectionSort<T>
     {
         /// <summary>
         /// Takes an unsorted array and performs a Selection Sort on it.
