@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structures_CSharp.Shared
+namespace Algorithms_CSharp.Shared
 {
     /// <summary>
     /// Class used to quickly set up test harnesses for inheriting classes.

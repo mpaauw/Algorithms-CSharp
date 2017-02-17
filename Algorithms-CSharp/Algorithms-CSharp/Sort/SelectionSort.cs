@@ -16,7 +16,7 @@ namespace Algorithms_CSharp.Sort
         /// Takes an unsorted array and performs a Selection Sort on it.
         /// </summary>
         /// <param name="input">Unsorted array to be processed within the sort.</param>
-        public void sort(IComparable[] input)
+        public IComparable[] sort(IComparable[] input)
         {
             for(int i = 0; i < input.Length; i++)
             {
@@ -32,6 +32,7 @@ namespace Algorithms_CSharp.Sort
                 input[i] = input[minIndex];
                 input[minIndex] = temp;
             }
+            return input;
         }
     }
 }
