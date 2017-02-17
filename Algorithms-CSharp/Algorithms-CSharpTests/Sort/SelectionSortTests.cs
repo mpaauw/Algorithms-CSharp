@@ -21,7 +21,7 @@ namespace Algorithms_CSharp.Sort.Tests
 
         private TestEngine testDriver;
 
-        private SelectionSort<int> selectionSort;
+        private SelectionSort selectionSort;
     
         /// <summary>
         /// Default constructor.
@@ -30,7 +30,7 @@ namespace Algorithms_CSharp.Sort.Tests
         public SelectionSortTests()
         {
             this.testDriver = new TestEngine(TEST_BREADTH, TEST_DEPTH);
-            selectionSort = new SelectionSort<int>();
+            this.selectionSort = new SelectionSort();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Algorithms_CSharp.Sort.Tests
         [TestMethod]
         public void sortTest()
         {
-            int[] actualSort = selectionSort.sort(this.testDriver.elements);
+            int[] actualSort = this.selectionSort.sort(this.testDriver.elements);
             Array.Sort(this.testDriver.elements);
             int[] expectedSort = this.testDriver.elements;           
             for(int i = 0; i < actualSort.Length; i++)
