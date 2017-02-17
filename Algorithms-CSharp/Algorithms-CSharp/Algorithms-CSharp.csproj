@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\TestEngine.cs" />
+    <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>

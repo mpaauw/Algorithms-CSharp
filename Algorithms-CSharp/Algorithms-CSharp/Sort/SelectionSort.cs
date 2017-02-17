@@ -16,6 +16,7 @@ namespace Algorithms_CSharp.Sort
         /// Takes an unsorted array and performs a Selection Sort on it.
         /// </summary>
         /// <param name="input">Unsorted array to be processed within the sort.</param>
+        /// /// <returns>Returns the sorted integer array.</returns>
         public int[] sort(int[] input)
         {
             for(int i = 0; i < input.Length; i++)
