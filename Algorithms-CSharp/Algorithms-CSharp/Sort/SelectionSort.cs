@@ -16,21 +16,24 @@ namespace Algorithms_CSharp.Sort
         /// Takes an unsorted array and performs a Selection Sort on it.
         /// </summary>
         /// <param name="input">Unsorted array to be processed within the sort.</param>
-        public IComparable[] sort(IComparable[] input)
+        public int[] sort(int[] input)
         {
             for(int i = 0; i < input.Length; i++)
             {
                 int minIndex = i;
                 for(int j = i + 1; j < input.Length; j++)
                 {
-                    if(input[j].CompareTo(input[i]) < 0)
+                    if(input[j] < input[minIndex])
                     {
                         minIndex = j;
                     }
                 }
-                IComparable temp = input[i];
-                input[i] = input[minIndex];
-                input[minIndex] = temp;
+                if(minIndex != i)
+                {
+                    int temp = input[i];
+                    input[i] = input[minIndex];
+                    input[minIndex] = temp;
+                }               
             }
             return input;
         }

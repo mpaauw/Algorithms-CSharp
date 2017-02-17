@@ -39,20 +39,12 @@ namespace Algorithms_CSharp.Sort.Tests
         [TestMethod]
         public void sortTest()
         {
-            // arrange
-            IComparable[] unsortedArray = new IComparable[this.testDriver.elements.Length];
-            for(int i = 0; i < this.testDriver.elements.Length; i++)
-            {
-                unsortedArray[i] = this.testDriver.elements[i];
-            }
+            int[] actualSort = selectionSort.sort(this.testDriver.elements);
             Array.Sort(this.testDriver.elements);
-            int[] expectedSort = this.testDriver.elements;
-            // act
-            IComparable[] actualSort = selectionSort.sort(unsortedArray);
-            // assert
+            int[] expectedSort = this.testDriver.elements;           
             for(int i = 0; i < actualSort.Length; i++)
             {
-                Assert.Equals(actualSort[i].CompareTo(expectedSort[i]), 0);
+                Assert.AreEqual(expectedSort[i], actualSort[i]);
             }
         }
     }
