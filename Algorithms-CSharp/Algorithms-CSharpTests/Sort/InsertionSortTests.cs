@@ -39,6 +39,7 @@ namespace Algorithms_CSharp.Sort.Tests
         [TestMethod]
         public void sortTest()
         {
+            // act / assert
             int[] actualSort = this.insertionSort.sort(this.testDriver.elements);
             Array.Sort(this.testDriver.elements);
             int[] expectedSort = this.testDriver.elements;
