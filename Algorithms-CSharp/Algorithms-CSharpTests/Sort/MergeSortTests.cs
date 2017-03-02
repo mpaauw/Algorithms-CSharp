@@ -9,6 +9,9 @@ using Algorithms_CSharp.Shared;
 
 namespace Algorithms_CSharp.Sort.Tests
 {
+    /// <summary>
+    /// Unit test class that tests methods within the MergeSort class.
+    /// </summary>
     [TestClass]
     public class MergeSortTests
     {
@@ -20,12 +23,19 @@ namespace Algorithms_CSharp.Sort.Tests
 
         private MergeSort mergeSort;
 
+        /// <summary>
+        /// Default constructor.
+        /// Initializes all class-wide test-dependent members.
+        /// </summary>
         public MergeSortTests()
         {
             this.testDriver = new TestEngine(TEST_BREADTH, TEST_DEPTH);
             this.mergeSort = new MergeSort();
         }
 
+        /// <summary>
+        /// Tests if the sort() method within the MergeSort class is able to properly sort an array of items.
+        /// </summary>
         [TestMethod]
         public void sortTest()
         {
