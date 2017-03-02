@@ -48,6 +48,7 @@
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Shared\TestEngine.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
+    <Compile Include="Sort\QuickSort.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
   </ItemGroup>
   <ItemGroup>
