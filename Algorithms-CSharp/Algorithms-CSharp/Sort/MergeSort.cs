@@ -15,8 +15,8 @@ namespace Algorithms_CSharp.Sort
                 return input;
             }
 
-            int[] arr1 = spliceArray(input, 0, input.Length / 2);
-            int[] arr2 = spliceArray(input, (input.Length / 2) + 1, input.Length);
+            int[] arr1 = input.Take(input.Length / 2).ToArray();
+            int[] arr2 = input.Skip(input.Length / 2).ToArray();
 
             arr1 = sort(arr1);
             arr2 = sort(arr2);
@@ -26,81 +26,47 @@ namespace Algorithms_CSharp.Sort
 
         private int[] spliceArray(int[] input, int start, int end)
         {
-            int[] newArray = new int[end - start];
-            for(int i = start; i < end; i++)
+            int[] newArray = new int[(end - start) + 1];
+            int iter = 0;
+            for(int i = start; i < end - 1; i++)
             {
-                newArray[i] = input[i];
+                newArray[iter] = input[i];
+                iter++;
             }
             return newArray;
         }
 
         private int[] merge(int[] arr1, int[] arr2)
         {
-            int[] arr3 = new int[arr1.Length];
-            int i = 0, iter = 0;
-            for(i = 0; i < arr1.Length && i < arr2.Length; i++)
+            List<int> list1 = arr1.ToList();
+            List<int> list2 = arr2.ToList();
+
+            List<int> newList = new List<int>();
+            while(list1.Count() > 0 && list2.Count() > 0)
             {
-                if(arr1[i] > arr2[i])
+                if(list1[0] > list2[0])
                 {
-                    arr3[iter] = arr2[i];
-                    iter++;
+                    newList.Add(list2[0]);
+                    list2.RemoveAt(0);
                 }
                 else
                 {
-                    arr3[iter] = arr1[i];
-                    iter++;
+                    newList.Add(list1[0]);
+                    list1.RemoveAt(0);
                 }
             }
-            for(int j = i; j < arr1.Length; j++)
+            while(list1.Count() > 0)
             {
-                arr3[iter] = arr1[j];
-                iter++;
+                newList.Add(list1[0]);
+                list1.RemoveAt(0);
             }
-            for(int j = i; j < arr2.Length; j++)
+            while(list2.Count() > 0)
             {
-                arr3[iter] = arr2[j];
-                iter++;
+                newList.Add(list2[0]);
+                list2.RemoveAt(0);
             }
-            return arr3;
-        }
 
-        //public int[] sort(int[] input)
-        //{
-        //    int[] inputB = input;
-        //    splitMerge(input, inputB, 0, input.Length);
-        //    return input;
-        //}
-
-        //private void splitMerge(int[] inputA, int[] inputB, int start, int end)
-        //{
-        //    if(end - start < 2)
-        //    {
-        //        return;
-        //    }
-        //    int mid = (end + start) / 2;
-        //    splitMerge(inputA, inputB, start, mid);
-        //    splitMerge(inputA, inputB, mid, end);
-
-        //    merge(inputB, inputA, start, mid, end);
-        //}
-
-        //private void merge(int[] inputA, int[] inputB,int start, int mid, int end)
-        //{
-        //    int i = start, j = mid;
-        //    for(int k = start; k < end; k++)
-        //    {
-        //        if(i < mid && (j >= end || inputA[i] < inputA[j]))
-        //        {
-        //            inputB[k] = inputA[i];
-        //            i = i + 1;
-        //        }
-        //        else
-        //        {
-        //            inputB[k] = inputA[j];
-        //            j = j + 1;
-        //        }
-        //    }
-        //}
-        
+            return newList.ToArray();
+        }        
     }
 }

@@ -12,9 +12,9 @@ namespace Algorithms_CSharp.Sort.Tests
     [TestClass]
     public class MergeSortTests
     {
-        private const int TEST_BREADTH = 20;
+        private const int TEST_BREADTH = 200;
 
-        private const int TEST_DEPTH = 100;
+        private const int TEST_DEPTH = 10000;
 
         private TestEngine testDriver;
 
