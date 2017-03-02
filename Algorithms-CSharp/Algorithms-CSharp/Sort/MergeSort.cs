@@ -34,34 +34,37 @@ namespace Algorithms_CSharp.Sort
         /// <returns>Returns an array of sorted integers comprised of elements from both input arrays.</returns>
         private int[] merge(int[] arr1, int[] arr2)
         {
-            List<int> list1 = arr1.ToList();
-            List<int> list2 = arr2.ToList();
+            int[] mergedArr = new int[arr1.Length + arr2.Length];
 
-            List<int> newList = new List<int>();
-            while(list1.Count() > 0 && list2.Count() > 0)
+            int iter1 = 0, iter2 = 0, mergedIter = 0;
+            while(iter1 < arr1.Length && iter2 < arr2.Length)
             {
-                if(list1[0] > list2[0])
+                if(arr1[iter1] > arr2[iter2])
                 {
-                    newList.Add(list2[0]);
-                    list2.RemoveAt(0);
+                    mergedArr[mergedIter] = arr2[iter2];
+                    iter2++;
+                    mergedIter++;
                 }
                 else
                 {
-                    newList.Add(list1[0]);
-                    list1.RemoveAt(0);
+                    mergedArr[mergedIter] = arr1[iter1];
+                    iter1++;
+                    mergedIter++;
                 }
             }
-            while(list1.Count() > 0)
+            while(iter1 < arr1.Length)
             {
-                newList.Add(list1[0]);
-                list1.RemoveAt(0);
+                mergedArr[mergedIter] = arr1[iter1];
+                iter1++;
+                mergedIter++;
             }
-            while(list2.Count() > 0)
+            while(iter2 < arr2.Length)
             {
-                newList.Add(list2[0]);
-                list2.RemoveAt(0);
+                mergedArr[mergedIter] = arr2[iter2];
+                iter2++;
+                mergedIter++;
             }
-            return newList.ToArray();
+            return mergedArr;
         }        
     }
 }
