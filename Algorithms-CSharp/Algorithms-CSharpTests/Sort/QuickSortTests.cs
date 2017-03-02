@@ -40,7 +40,7 @@ namespace Algorithms_CSharp.Sort.Tests
         public void sortTest()
         {
             // act / assert
-            int[] actualSort = this.quickSort.sort(this.testDriver.elements, this.testDriver.elements[0], this.testDriver.elements[this.testDriver.elements.Length - 1]);
+            int[] actualSort = this.quickSort.sort(this.testDriver.elements, 0, this.testDriver.elements.Length - 1);
             Array.Sort(this.testDriver.elements);
             int[] expectedSort = this.testDriver.elements;
             for(int i = 0; i < actualSort.Length; i++)
