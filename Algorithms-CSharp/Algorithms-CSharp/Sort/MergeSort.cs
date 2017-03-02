@@ -23,19 +23,15 @@ namespace Algorithms_CSharp.Sort
             {
                 return input;
             }
-            int[] arr1 = input.Take(input.Length / 2).ToArray();
-            int[] arr2 = input.Skip(input.Length / 2).ToArray();
-            arr1 = sort(arr1);
-            arr2 = sort(arr2);
-            return merge(arr1, arr2);
+            return merge(sort(input.Take(input.Length / 2).ToArray()), sort(input.Skip(input.Length / 2).ToArray()));
         }
 
         /// <summary>
         /// Method which takes two unsorted arrays and merges them.
         /// </summary>
-        /// <param name="arr1"></param>
-        /// <param name="arr2"></param>
-        /// <returns></returns>
+        /// <param name="arr1">First array to be used in merge.</param>
+        /// <param name="arr2">Second array to be used in merge.</param>
+        /// <returns>Returns an array of sorted integers comprised of elements from both input arrays.</returns>
         private int[] merge(int[] arr1, int[] arr2)
         {
             List<int> list1 = arr1.ToList();
