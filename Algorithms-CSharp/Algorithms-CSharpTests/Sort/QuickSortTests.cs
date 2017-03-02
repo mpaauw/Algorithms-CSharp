@@ -9,6 +9,9 @@ using Algorithms_CSharp.Shared;
 
 namespace Algorithms_CSharp.Sort.Tests
 {
+    /// <summary>
+    /// Unit test class that tests methods within the QuickSort class.
+    /// </summary>
     [TestClass]
     public class QuickSortTests
     {
@@ -20,12 +23,19 @@ namespace Algorithms_CSharp.Sort.Tests
 
         private QuickSort quickSort;
 
+        /// <summary>
+        /// Default constructor.
+        /// Initializes all class-wide test-dependent members.
+        /// </summary>
         public QuickSortTests()
         {
             this.testDriver = new TestEngine(TEST_BREADTH, TEST_DEPTH);
             this.quickSort = new QuickSort();
         }
 
+        /// <summary>
+        /// Tests if the sort() method within the QuickSort class is able to properly sort an array of items.
+        /// </summary>
         [TestMethod]
         public void sortTest()
         {
