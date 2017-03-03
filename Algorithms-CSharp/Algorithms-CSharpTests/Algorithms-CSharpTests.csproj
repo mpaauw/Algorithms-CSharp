@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />
+    <Compile Include="Sort\BubbleSortTests.cs" />
     <Compile Include="Sort\InsertionSortTests.cs" />
     <Compile Include="Sort\MergeSortTests.cs" />
     <Compile Include="Sort\QuickSortTests.cs" />
