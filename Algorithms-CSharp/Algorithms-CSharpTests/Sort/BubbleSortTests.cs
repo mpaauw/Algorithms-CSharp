@@ -9,6 +9,9 @@ using Algorithms_CSharp.Shared;
 
 namespace Algorithms_CSharp.Sort.Tests
 {
+    /// <summary>
+    /// Unit test class that tests methods within the BubbleSort class.
+    /// </summary>
     [TestClass]
     public class BubbleSortTests
     {
@@ -20,12 +23,19 @@ namespace Algorithms_CSharp.Sort.Tests
 
         private BubbleSort bubbleSort;
 
+        /// <summary>
+        /// Default constructor.
+        /// Initializes all class-wide test-dependent members.
+        /// </summary>
         public BubbleSortTests()
         {
             this.testDriver = new TestEngine(TEST_BREADTH, TEST_DEPTH);
             this.bubbleSort = new BubbleSort();
         }
 
+        /// <summary>
+        /// Tests if the sort() method within the BubbleSort class is able to properly sort an array of items.
+        /// </summary>
         [TestMethod]
         public void sortTest()
         {
