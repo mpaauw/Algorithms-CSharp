@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algorithms_CSharp.Sort
 {
-    class CountingSort
+    public class CountingSort
     {
         public int[] sort(int[] input)
         {
