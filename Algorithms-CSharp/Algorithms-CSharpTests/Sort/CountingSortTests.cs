@@ -9,6 +9,9 @@ using Algorithms_CSharp.Shared;
 
 namespace Algorithms_CSharp.Sort.Tests
 {
+    /// <summary>
+    /// Unit test class that tests methods within the CountingSort class.
+    /// </summary>
     [TestClass]
     public class CountingSortTests
     {
@@ -20,12 +23,17 @@ namespace Algorithms_CSharp.Sort.Tests
 
         private CountingSort countingSort;
 
+        /// <summary>
+        /// Default constructor.
+        /// Initializes all class-wide test-dependent members.
+        /// </summary>
         public CountingSortTests()
         {
             this.testDriver = new TestEngine(TEST_BREADTH, TEST_DEPTH);
             this.countingSort = new CountingSort();
         }
 
+        //Tests if the sort() method within the CountingSort class is able to properly sort an array of items.
         [TestMethod]
         public void sortTest()
         {
