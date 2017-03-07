@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Algorithms_CSharp.Sort
 {
+    /// <summary>
+    /// Class including code to perform a Counting Sort.
+    /// Efficiency: O(n + k)
+    /// </summary>
     public class CountingSort
     {
+        /// <summary>
+        /// Takes an unsorted array and performs a Counting Sort on it.
+        /// </summary>
+        /// <param name="input">Unsorted array to be processed within the sort.</param>
+        /// <returns>Returns the sorted integer array.</returns>
         public int[] sort(int[] input)
         {
             int max = input[0], min = input[0];
