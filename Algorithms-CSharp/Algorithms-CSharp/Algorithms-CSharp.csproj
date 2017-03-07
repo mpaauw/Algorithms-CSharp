@@ -48,6 +48,7 @@
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Shared\TestEngine.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
+    <Compile Include="Sort\CountingSort.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\MergeSort.cs" />
     <Compile Include="Sort\QuickSort.cs" />
