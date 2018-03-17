@@ -19,10 +19,10 @@ namespace Algorithms_CSharp.Sort
         /// <returns>Returns the sorted integer array.</returns>
         public int[] sort(int[] input)
         {
-            for(int i = 0; i < input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
                 int j = i;
-                while((j > 0) && (input[j] < input[j - 1]))
+                while ((j > 0) && (input[j] < input[j - 1]))
                 {
                     int temp = input[j];
                     input[j] = input[j - 1];
